@@ -1,0 +1,30 @@
+.PostContainer{
+    background-color: var(--backgroundDark);
+}
+.PostContainer .title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    color: var(--headingColor);
+}
+.PostContainer .title + div{
+    margin-top: 1.4rem;
+}
+
+.PostContainer .title svg {
+    display: none;
+    cursor: pointer;
+}
+
+.PostContainer:hover .title svg {
+    display: block;
+}
+
+.PostContainer .title h2 {
+    font-weight: 600;
+}
+
+.PostContainer .title h2.skeleton {
+    height: 2rem;
+    width: 8rem;
+}

@@ -1,0 +1,40 @@
+.Profile {
+    padding: var(--containerPadding);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 3rem;
+    width: 72%;
+}
+.Profile > div{
+    border-radius: 0.4rem;
+    border: var(--outline);
+}
+.Profile > div:not(.main),  .Profile > div.main .profileData{
+    padding: 1.6rem;
+}
+
+@media (max-width: 1200px) {
+    .Profile{
+        width: 76%;
+    }
+    
+}
+
+@media (max-width: 1024px) {
+    .Profile{
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .Profile{
+        width: 88%;
+    }
+}
+
+@media (max-width: 480px) {
+    .Profile{
+        width: 100%;
+    }
+}

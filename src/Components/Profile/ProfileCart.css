@@ -1,0 +1,149 @@
+.ProfileCart {
+    border-radius: 0.4rem;
+    border: var(--outline);
+    height: max-content;
+    background-color: var(--backgroundDark);
+}
+
+.ProfileCart .profile {
+    position: relative;
+}
+
+.ProfileCart .profile .background {
+    width: 100%;
+    height: 6rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.4rem 0.4rem 0 0;
+}
+
+.ProfileCart .profile .profileImgContainer {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border: var(--outline);
+}
+
+.ProfileCart .profile .profileImgContainer img {
+    width: 100%;
+}
+
+.ProfileCart .profileData {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.ProfileCart .profileData .name {
+    color: var(--headingColor);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.ProfileCart .profileData .name:hover {
+    text-decoration: underline;
+    color: var(--brandColor);
+}
+
+.ProfileCart .profileData .discription {
+    margin: 0 auto;
+    font-size: 0.8rem;
+    font-weight: 500;
+    max-width: 70%;
+    color: var(--textColor);
+}
+
+.ProfileCart .divider {
+    height: 0.02rem;
+    background-color: var(--outlineColor);
+    margin: 0.9rem 0 0.8rem 0;
+}
+
+.ProfileCart :is(.networkData, .savedItems) {
+    padding: 0 0.8rem;
+}
+
+.ProfileCart .networkData>div {
+    display: flex;
+    justify-content: space-between;
+    color: var(--textColor);
+}
+
+.ProfileCart .networkData>div span {
+    font-size: 0.8rem;
+}
+
+.ProfileCart .networkData>h6 {
+    font-size: .8rem;
+    cursor: pointer;
+    color: var(--headingColorLight);
+}
+
+.ProfileCart .savedItems {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    padding-bottom: 0.9rem;
+    cursor: pointer;
+    color: var(--headingColorLight);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ProfileCart.loading .profileImgContainer{
+    background-color: #ffffff;   
+}
+.ProfileCart.loading :is(.third, .savedItems) {
+    margin: 0.2rem 0.5rem;    
+}
+.ProfileCart.loading .second {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 4rem 0.5rem 0.4rem 0.5rem;
+}
+
+.ProfileCart.loading .third {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.ProfileCart.loading :is(.second, .third ) div:nth-child(1){
+    height: 1rem;
+    width: 5rem;
+}
+
+.ProfileCart.loading :is(.second, .third ) div:nth-child(2) {
+    height: 1.6rem;
+    width: 100%;
+}
+
+.ProfileCart.loading .savedItems {
+    height: 0.6rem;
+}
+
+
+@media (max-width: 480px) {
+    .ProfileCart{
+        /* grid-column-start: 1;
+        grid-column-end: 4; */
+        display: none;
+    }
+}

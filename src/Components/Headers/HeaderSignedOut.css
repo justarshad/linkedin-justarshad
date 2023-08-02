@@ -1,0 +1,135 @@
+.navbar {
+    padding:var(--containerPadding);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: var(--backgroundDark)
+}
+
+.navbar .left {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.12rem;
+    color: var(--brandColor);
+}
+
+.navbar .left {
+    color: var(--brandColor);
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.navbar .left img {
+    height: 2rem;
+}
+
+.navbar .right {
+    display: flex;
+}
+
+.navbar .right .topics {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .right .topics div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--textColorLight);
+    gap: 0.2rem;
+    cursor: pointer;
+}
+
+.navbar .right .topics div:hover {
+    color: var(--textColor);
+}
+
+.navbar .right .topics div svg {
+    font-size: 1.6rem;
+}
+
+.navbar .right .topics div span {
+    font-size: 0.8rem;
+}
+
+.navbar .right .divider {
+    margin: 0 0.2rem 0 2rem;
+    width: 0.04rem;
+    height: 100%;
+    background: var(--textColorLight);
+}
+
+.navbar .right .logInSignUp {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar .right .logInSignUp button {
+    border: none;
+    outline: none;
+    background: none;
+    padding: .8rem 1.2rem;
+    border-radius: 2.8rem;
+    cursor: pointer;
+    color: var(--textColor);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.navbar .right .logInSignUp .joinBtn:hover {
+    background: var(--hoverBg);
+}
+
+.navbar .right .logInSignUp .signInBtn {
+    border: 0.08rem solid var(--brandColor);
+    color: var(--brandColor);
+}
+
+.navbar .right .logInSignUp .signInBtn:hover {
+    background-color: var(--hoverBgBrand);
+}
+
+
+
+.navbar .right .logInSignUpContainer {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--popupBg);
+    z-index: 10000;
+}
+
+.navbar .right .logInSignUpContainer.active {
+    display: flex;
+}
+
+.navbar .right .logInSignUpContainer>div {
+    background-color:var(--backgroundDark);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.navbar .right .logInSignUpContainer>div>svg {
+    cursor: pointer;
+    position: absolute;
+    color: var(--backgroundDark);
+    top: -2.6rem;
+    right: -2.6rem;
+    font-size: 2.6rem;
+}
+
+
+@media (max-width: 768px) {
+    .navbar .right :is(.topics, .divider) {
+        display: none;
+    }
+}

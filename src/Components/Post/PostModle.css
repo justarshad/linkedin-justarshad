@@ -1,0 +1,173 @@
+.PostModle {
+    position: fixed;
+    background-color: var(--popupBg);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 1000%;
+}
+
+.PostModle.active {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.container {
+    width: 40rem;
+    padding: .8rem 0;
+    border: 0.4rem;
+    background-color: var(--backgroundDark);
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.container> :is(div:not(.divider), .inputRow, img) {
+    padding: 0 1.8rem;
+}
+
+.container .profileRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .profileRow>div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.container .profileRow>div div h4 {
+    font-size: 1.16rem;
+    color: var(--headingColor);
+}
+
+.container .profileRow>div div span {
+    color: var(--textColorLight);
+    font-size: 1rem;
+}
+
+.container .profileRow>div img {
+    height: 3.4rem;
+    width: 3.4rem;
+    border-radius: 50%;
+}
+
+.container .inputRow {
+    height: 18rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    resize: none;
+    columns: var(--textColor);
+    font-size: 1rem;
+}
+
+.container .typesRow {
+    display: flex;
+    justify-content: space-around;
+    color: var(--headingColorLight);
+}
+
+.container .typesRow .type {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.container .typesRow .type svg {
+    font-size: 1.8rem;
+}
+
+.container .typesRow input {
+    display: none;
+}
+
+.container .lastRow {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.6rem;
+}
+.container .lastRow span{
+    color: red;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.container .lastRow button {
+    padding: 0.8rem 1.4rem;
+    border: var(--outline);
+    border-radius: 100rem;
+    font-size: 1.2rem;
+    background-color: var(--brandColor);
+    color: var(--white);
+}
+
+.container .lastRow button.disabled {
+    cursor: not-allowed;
+    background-color: var(--textColorLight);
+}
+.container .lastRow button.disabled:hover {
+    cursor: not-allowed;
+}
+
+.container .divider {
+    height: 0.08rem;
+    background-color: var(--outlineColor);
+}
+
+.imageView {
+    object-fit: cover;
+    object-position: bottom;
+    max-height: 22rem;
+    object-fit: contain;
+}
+
+.loader {
+    height: 2.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.loader span {
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 100%;
+    background-color: var(--brandColor);
+    animation: loderan 1s linear infinite;
+}
+
+.loader span:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.loader span:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.loader span:nth-child(4) {
+    animation-delay: 0.75s;
+}
+
+@keyframes loderan {
+    0% {
+        transform: translateY(-2rem);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateY(-2rem);
+    }
+}

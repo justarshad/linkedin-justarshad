@@ -1,0 +1,111 @@
+.FeedCart{
+    height: max-content;
+}
+
+
+.FeedCart .addPost{
+    border: 0.05rem solid var(--outlineColor);
+    padding: 0.8rem;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    background-color: var(--backgroundDark);
+}
+.FeedCart .addPost > div:nth-child(1){
+    display: flex;
+    gap: 0.8rem;
+}
+.FeedCart .addPost > div:nth-child(1) img{
+    height: 3.4rem;
+    width: 3.4rem;
+    border-radius: 50%;
+    cursor: text;
+}
+.FeedCart .addPost > div:nth-child(1) .input{
+    flex: 1;
+    border: 0.1rem solid black;
+    border-color: var(--outlineColor);
+    border-radius: 100rem;
+    padding: 0.4rem 1.2rem;
+    font-size: 1rem;
+}
+.FeedCart .addPost > div:nth-child(1) .input:hover{
+    background-color: var(--textColorBlack_1);
+}
+.FeedCart .addPost > div:nth-child(2){
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.FeedCart .addPost > div:nth-child(2) .type{
+    display:flex;
+    gap: 0.3rem;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem
+}
+.FeedCart .addPost > div:nth-child(2) .type:nth-child(1) svg{
+    color: var(--brandColor);
+}
+.FeedCart .addPost > div:nth-child(2) .type:nth-child(2) svg{
+    color: #124b01;
+}
+.FeedCart .addPost > div:nth-child(2) .type:nth-child(3) svg{
+    color: #9b04ff;
+}
+.FeedCart .addPost > div:nth-child(2) .type:nth-child(4) svg{
+    color: #ff9204;
+}
+
+.FeedCart .addPost > div:nth-child(2) .type span{
+    color: var(--textColor);
+}
+
+
+
+
+
+.FeedCart .addPost.userLoading > div:nth-child(1) .profileIcon{
+    height: 3.4rem;
+    width: 3.4rem;
+    border-radius: 50%;
+    border: none;
+}
+.FeedCart .addPost.userLoading > div:nth-child(1) .input{
+    border: none;
+    height: 3.4rem;
+}
+.FeedCart .addPost.userLoading > div:nth-child(1) input:focus{
+    outline: none
+}
+
+.FeedCart .addPost.userLoading > div:nth-child(2) .type{
+    height: 2rem;
+    width: 8rem;
+}
+
+
+
+
+
+
+.FeedCart .skeleton{
+    height: 2rem;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+
+@media (max-width: 768px) {
+    .FeedCart{
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+}
+@media (max-width: 480px) {
+    .FeedCart{
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+}

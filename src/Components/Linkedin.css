@@ -1,0 +1,38 @@
+.Linkedin {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: var(--backgroundDark);
+}
+
+.Linkedin>img {
+    width: 50%;
+    position: absolute;
+    top: 5%;
+    right: -5%;
+}
+
+.Linkedin .mainContainer {
+    padding: var(--containerPadding);
+    max-width: 70%;
+}
+
+.Linkedin .mainContainer>h1 {
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: var(--brandGoldColor);
+    line-height: 4rem;
+    margin: 0.8rem 0 2.8rem 0;
+}
+
+@media (max-width: 480px) {
+    .Linkedin>img {
+        display: none;
+    }
+    .Linkedin .mainContainer {
+        max-width: 100%;
+    }
+    .Linkedin .mainContainer>h1 {
+        text-align: center;
+    }
+}

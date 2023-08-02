@@ -1,0 +1,177 @@
+#bgEditBtn,
+#profileChangIcon {
+    display: none;
+}
+
+.main {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--backgroundDark);
+}
+
+.main label.bgEditBtn {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+
+.main:hover label.bgEditBtn {
+    display: inline-block;
+    background-color: var(--brandColor);
+    box-shadow: 0.4rem 0.4rem var(--textColorLight);
+}
+
+.main :is( .background, .backgroundLoader){
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    object-position: center;
+    border: var(--outline);
+}
+.main .backgroundLoader{
+    display: none;
+}
+
+.main .profileData {
+    margin-top: -7.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: flex-start;
+}
+
+.main .profileData :is(.profileIcon, .profileIconLoader) {
+    height: 10rem;
+    width: 10rem;
+    margin-bottom: 0.4rem;
+    background-color: var(--white);
+    background-image: #fff;
+    overflow: hidden;
+    border-radius: 50%;
+    border: var(--outline);
+    cursor: pointer;
+}
+.main .profileData .profileIconLoader{
+    display: none;
+}
+
+.main .profileData .profileIcon label {
+    height: 100%;
+    width: 100%;
+}
+
+.main .profileData .profileIcon label img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.main .profileData .name {
+    width: 100%;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: var(--headingColor);
+}
+
+.main .profileData .name svg {
+    display: none;
+    cursor: pointer;
+}
+
+.main .profileData:hover .name svg {
+    display: block;
+}
+
+.main .profileData .discription {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--headingColorLight);
+}
+
+.main .profileData .location {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--textColor);
+}
+
+.main .profileData .connections {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--brandColor);
+}
+
+.about {
+    background-color: var(--backgroundDark);
+}
+.about .title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    color: var(--headingColor);
+}
+
+.about .title svg {
+    font-size: 1.6rem;
+    display: none;
+}
+
+.about:hover .title svg {
+    display: block;
+}
+.about:hover .title svg {
+    display: block;
+}
+.about p{
+    color: var(--textColor);
+    font-size: 0.96rem;
+}
+
+.main .background.skeleton {
+    width: 100%;
+    height: 15rem;
+}
+
+.main .profileData .name.skeleton {
+    width: 30%;
+    height: 2rem;
+}
+
+.main .profileData .discription.skeleton {
+    height: 1.2rem;
+    width: 60%;
+}
+
+.main .profileData .location.skeleton {
+    height: 1rem;
+    width: 20%;
+}
+
+.main .profileData .connections.skeleton {
+    height: 0.8rem;
+    width: 25%;
+}
+
+.about .title.skeleton {
+    height: 2.4rem;
+    width: 18%;
+}
+
+.about .text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.about .text span.skeleton {
+    width: 100%;
+    height: 1.2rem;
+}
+
+.about .text span.skeleton:nth-child(4) {
+    width: 60%;
+}

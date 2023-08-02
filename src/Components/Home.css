@@ -1,0 +1,6 @@
+.Home{
+    padding: var(--containerPadding);
+    display: grid;
+    grid-template-columns: 0.8fr 2fr 1fr;
+    column-gap: .8rem;
+}

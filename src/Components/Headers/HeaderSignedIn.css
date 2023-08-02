@@ -1,0 +1,169 @@
+.HeaderSignedIn {
+    padding:var(--containerPadding);
+    display: flex;
+    gap: 5rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--backgroundDark);
+}
+
+.HeaderSignedIn .left {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    flex: 1;
+}
+.HeaderSignedIn .left>img{
+    cursor: pointer;
+}
+
+.HeaderSignedIn .left>div {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.4rem;
+    border-radius: 0.15rem;
+    background-color: var(--hoverBgBrand);
+    transition: all 0.5s ease;
+}
+
+.HeaderSignedIn .left>div:has(input:focus) {
+    outline: var(--outline);
+    flex: 1;
+}
+
+.HeaderSignedIn .left>div input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.2rem;
+    color: var(--textColor);
+    flex: 1;
+}
+
+.HeaderSignedIn .right {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.HeaderSignedIn .right .topics {
+    display: flex;
+    gap: 2rem;
+}
+
+.HeaderSignedIn .right .topics .topic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--textColorLight);
+    gap: 0.15rem;
+    cursor: pointer;
+}
+
+.HeaderSignedIn .right .topics :is(.topic:hover, .topic.active) {
+    color: var(--textColor);
+}
+
+.HeaderSignedIn .right .topics .topic svg {
+    font-size: 1.6rem;
+}
+
+.HeaderSignedIn .right .topics .topic span {
+    font-size: 0.8rem;
+}
+
+.HeaderSignedIn .right .divider {
+    width: 0.03rem;
+    background-color: var(--textColor);
+}
+
+.HeaderSignedIn .right .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.HeaderSignedIn .right .profile img {
+    height: 3.2rem;
+    width: 3.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.HeaderSignedIn .right .profile:hover .profileHover {
+    display: block;
+}
+
+.HeaderSignedIn .right .profile .profileHover {
+    width: max-content;
+    display: none;
+    position: absolute;
+    top: calc(100%);
+    right: 0;
+    border-radius: 0.3rem;
+    transition: all 0.4s ease;
+    background-color: var(--backgroundDark);
+    border: var(--outline);
+    border-width: 0.08rem;
+}
+
+.HeaderSignedIn .right .profile .profileHover ul {
+    list-style: none;
+}
+.HeaderSignedIn .right .profile .profileHover ul li{
+    margin: 1rem 0.8rem;
+}
+.HeaderSignedIn .right .profile .profileHover ul .first{
+    display: flex;
+    gap: 0.6rem;
+}
+.HeaderSignedIn .right .profile .profileHover ul .first img{
+    height: 3.6rem;
+    width: 3.6rem;
+}
+.HeaderSignedIn .right .profile .profileHover ul .first div h4{
+    font-size: 1rem;
+    color: var(--headingColor);
+}
+.HeaderSignedIn .right .profile .profileHover ul .first div h6{
+    font-size: 0.8rem;
+    color: var(--textColor);
+    font-weight: 500;
+}
+.HeaderSignedIn .right .profile .profileHover ul .second{
+    border: 0.08rem solid var(--brandColor);
+    border-radius: 100rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    color: var(--headingColorLight);
+    cursor: pointer;
+}
+.HeaderSignedIn .right .profile .profileHover ul .divider{
+    height: 0.05rem;
+    width: 100%;
+    background-color: var(--outlineColor);
+    color: #000;
+    margin-left: 0;
+    margin-right: 0;
+}
+.HeaderSignedIn .right .profile .profileHover ul .third{
+    text-align:right;
+}
+.HeaderSignedIn .right .profile .profileHover ul .third button{
+    font-size: 1.16rem;
+    color: var(--white);
+    cursor: pointer;
+    border: var(--outline);
+    padding: 0.6rem 1.5rem;
+    border-radius: 100rem;
+    background-color: var(--brandColor);
+}
+
+/* ----------- */
+@media (max-width: 768px) {
+
+    .HeaderSignedIn .right :is(.topics, .divider) {
+        display: none;
+    }
+}

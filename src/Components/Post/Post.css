@@ -1,0 +1,159 @@
+.Post {
+    margin: 0.4rem 0;
+    border: var(--outline);
+    border-radius: 0.4rem;
+    padding: 0.8rem;
+    background-color: var(--backgroundDark);
+}
+
+.Post .upper {
+    display: flex;
+    gap: 0.6rem;
+    position: relative;
+}
+
+.Post .upper :is(img, .img.skeleton) {
+    height: 2.8rem;
+    width: 2.8rem;
+    border-radius: 50%;
+}
+.Post .upper img.outsideProfile{
+    cursor: pointer;
+}
+
+.Post .upper>div h4 {
+    font-size: 0.9rem;
+    line-height: 1rem;
+    color: var(--headingColor);
+}
+
+.Post .upper>div h4.outsideProfile:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--brandColor);
+}
+
+.Post .upper>div h6 {
+    display: inline;
+    font-weight: 500;
+    font-size: 0.8rem;
+    margin-right: 0.4rem;
+    color: var(--textColorLight);
+}
+
+.Post .upper>div .time {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 0 0.6rem;
+    font-weight: 600;
+    color: var(--textColor);
+}
+
+.Post .upper .deleteBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.4rem;
+    color: red;
+    display: none;
+    cursor: pointer;
+}
+
+.Post:hover .upper .deleteBtn {
+    display: block;
+}
+
+.Post .middle p{
+    margin-top: 0.8rem;
+    color: var(--textColor);
+    font-size: 1rem;
+}
+.Post .middle .textShowMore{
+    margin-bottom: 0.4rem;
+    color: var(--textColorLight);
+    font-size: 0.8rem;
+    text-align: end;
+    font-weight: 600;
+}
+.Post .middle .textShowMore:hover{
+    color: var(--brandColorDark);
+    cursor: pointer;
+}
+
+.Post>img {
+    width: 100%;
+    margin-top: 0.8rem;
+    max-height: 030rem;
+    object-fit: contain;
+}
+
+.Post .bottom {
+    display: flex;
+}
+
+.Post .bottom .item {
+    display: flex;
+    gap: 0.4rem;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 0.4rem 0;
+    border-radius: 0.2rem;
+    color: var(--textColor);
+}
+
+.Post .bottom .item:hover {
+    background-color: var(--textColorBlack_1);
+}
+
+.Post .upper .ownerInfo .name.skeleton {
+    height: 1rem;
+    width: 5rem;
+}
+
+.Post .upper .ownerInfo .discription.skeleton {
+    height: 1rem;
+    width: 10rem;
+    display: inline-block;
+    margin: 0.4rem 0;
+}
+
+.Post .upper .ownerInfo .time.skeleton {
+    height: 1rem;
+    width: 2rem;
+    display: inline-block;
+    margin: 0.4rem 0.6rem;
+}
+
+.Post .middle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.Post .middle .skeleton {
+    height: 0.8rem;
+}
+
+.Post .middle span:nth-child(4) {
+    width: 60%;
+}
+
+.Post>div.img.skeleton {
+    width: 100%;
+    height: 15rem;
+}
+
+.Post .bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+
+.Post .bottom .skeleton {
+    display: block;
+    height: 2em;
+    width: 8rem;
+    border-radius: 0.2rem;
+}
