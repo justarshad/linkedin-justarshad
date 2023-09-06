@@ -1,4 +1,4 @@
-import './Login.css';
+import './Style.css';
 import googleIcon from '../../Assets/google.svg';
 import { signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, googleAuthProvider, db } from '../../Config/firebase';
@@ -9,9 +9,11 @@ const Login = ({ func }) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [logingBtn, setLogingBtn] = useState(false);
 
     const errlineRef = useRef();
-
+    const passwordInputRef = useRef();
+    const showHideRef = useRef();
 
     const emailChanged = (e) => {
         setEmail(e.target.value);
@@ -22,7 +24,17 @@ const Login = ({ func }) => {
         errlineRef.current.innerHTML = '';
     }
 
+    const handleShowHide = () => {
+        if (passwordInputRef.current.type === 'text') {
+            passwordInputRef.current.type = 'password';
+            showHideRef.current.innerHTML = 'show';
 
+        } else {
+            passwordInputRef.current.type = 'text';
+            showHideRef.current.innerHTML = 'hide';
+        }
+    }
+    
     const signInWithGoogle = () => {
 
         signInWithPopup(auth, googleAuthProvider).then((googlePopUpRes) => {
@@ -39,23 +51,11 @@ const Login = ({ func }) => {
                 });
             });
 
-        }).catch(err => { });
+        }).catch(err => {
+            errlineRef.current.innerHTML = 'Somthing went wrong when signing with google!';
+         });
     }
 
-    const passwordInputRef = useRef();
-    const showHideRef = useRef();
-
-    const handleShowHide = () => {
-        if (passwordInputRef.current.type === 'text') {
-            passwordInputRef.current.type = 'password';
-            showHideRef.current.innerHTML = 'show';
-
-        } else {
-            passwordInputRef.current.type = 'text';
-            showHideRef.current.innerHTML = 'hide';
-        }
-    }
-    const [logingWithEmailPassword, setLogingWithEmailPassword] = useState(false);
     const signInWithEmailPassword = () => {
 
         const EmailRegx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,8}$/i;
@@ -68,12 +68,12 @@ const Login = ({ func }) => {
 
         }
         else {
-            setLogingWithEmailPassword(true);
+            setLogingBtn(true);
             signInWithEmailAndPassword(auth, email, password).then(res => {
-                setLogingWithEmailPassword(false);
+                setLogingBtn(false);
             }).catch(err => {
                 errlineRef.current.innerHTML = '!Please take a look You may entered wrong E-mail or Password. if you sure you are right then check your Internet connection';
-                setLogingWithEmailPassword(false);
+                setLogingBtn(false);
             });
         }
     }
@@ -95,7 +95,7 @@ const Login = ({ func }) => {
             </div>
             <span ref={errlineRef} className='errline'></span>
             <div className="signIn">
-                {logingWithEmailPassword ? (<div className='logingWithEmailPassword'><span></span><span></span><span></span><span></span></div>):(<button onClick={() => signInWithEmailPassword()}>Sign in</button>)}
+                {logingBtn ? (<div className='logingWithEmailPassword'><span></span><span></span><span></span><span></span></div>) : (<button onClick={() => signInWithEmailPassword()}>Sign in</button>)}
             </div>
             <div className="or">
                 <span className="first"></span>

@@ -1,14 +1,13 @@
-import { useParams } from "react-router-dom";
 import './User.css';
-import Profile from "./Profile";
-import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
+import Profile from "../Profile/Profile";
 import { db } from "../../Config/firebase";
+import { doc, getDoc } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const User = () => {
 
     const [user, setUser] = useState(false);
-
     const { id } = useParams();
 
     useEffect(() => {

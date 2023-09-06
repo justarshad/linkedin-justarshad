@@ -1,23 +1,22 @@
 import './App.css';
-import Home from './Components/Home';
-import Profile from './Components/Profile/Profile';
+import Feed from './Pages/Feed/Feed';
+import Profile from './Pages/Profile/Profile';
+import Home from './Pages/Home/Home';
+import Header from './Components/Headers/Header';
+import User from './Pages/User/User';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Linkedin from './Components/Linkedin';
-import Header from './Components/Headers/Header';
-import User from './Components/Profile/User';
 
 function App() {
-
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path='/' element={<Linkedin />} />
-          <Route path='/home' element={<Home />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/feed' element={<Feed />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/users/:id' element={<User/>} />
+          <Route path='/users/:id' element={<User />} />
         </Routes>
       </BrowserRouter>
     </div >

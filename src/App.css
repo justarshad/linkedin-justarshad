@@ -26,35 +26,15 @@
   --headingColorLight: #000000e7;
   --headingColor: #000;
 
-
-/* 
-
-
-
-
-  --brandColor_1: #0a66c21a;
-
-  --textColorBlack_1: #00000010;
-  --textColorBlack_2: #00000032;
-  --textColorBlack_6: #000000a0;
-  --textColorBlack_7: #000000b4;
-  --textColorBlack_8: #000000ce;
-  --textColorBlack_9: #000000e4;
-  --textColorBlack_10: #000; */
-
-
-
   --phone: 420px;
   --tab: 768px;
 
   --containerPadding: 0.6rem 12rem;
   --outline: 0.05rem solid var(--outlineColor);
 
-
   --loadingBgImg: linear-gradient(to right, #82828233 10%, #8282824d 20%, #82828233 36%);
   --loadingBgSize: 200%;
   --loadingAnimation: loading 1.5s linear infinite;
-
 }
 
 
@@ -65,8 +45,6 @@ body {
   overflow-x: hidden;
   position: relative;
 }
-
-
 
 .skeleton {
   background-image: var(--loadingBgImg);
@@ -83,9 +61,6 @@ body {
     background-position: -200% 0;
   }
 }
-
-
-
 
 @media (max-width: 1200px) {
   html {

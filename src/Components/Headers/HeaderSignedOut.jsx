@@ -1,15 +1,15 @@
 import './HeaderSignedOut.css';
-import { useRef, useState } from 'react';
-import { ImCross } from 'react-icons/im';
+import Login from '../AuthComponents/Login';
+import Signin from '../AuthComponents/Signin';
 import logoIcon from '../../Assets/home-logo.svg';
 
+import { ImCross } from 'react-icons/im';
 import { GrArticle } from 'react-icons/gr';
 import { MdPeople } from 'react-icons/md';
 import { SiSololearn } from 'react-icons/si';
 import { PiBagSimpleFill } from 'react-icons/pi';
 
-import Login from '../AuthComponents/Login';
-import Signin from '../AuthComponents/Signin';
+import { useRef, useState } from 'react';
 
 const HeaderSignedOut = () => {
     const [needToSignIn, setNeedToSignIn] = useState(false);

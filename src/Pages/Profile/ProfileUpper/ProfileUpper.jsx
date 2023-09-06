@@ -1,19 +1,25 @@
 import './ProfileUpper.css';
-import EditProfile from './EditProfile';
-import background from '../../Assets/card-bg.svg'
-import profileIcon from '../../Assets/user.svg'
+import EditProfile from './EditProfile/EditProfile';
+import background from '../../../Assets/card-bg.svg'
+import profileIcon from '../../../Assets/user.svg'
 
 import { BiEditAlt } from 'react-icons/bi';
 
-import { db, auth, storage } from '../../Config/firebase';
+import { db, auth, storage } from '../../../Config/firebase';
 import { doc, updateDoc, getDoc } from 'firebase/firestore';
 import { uploadBytes, getDownloadURL, ref } from 'firebase/storage';
 import { useEffect, useRef, useState } from 'react';
 
 const ProfileUpper = ({ ProfileId }) => {
 
+    const bgLoaderRef = useRef();
+    const BgImgRef = useRef();
+    const profileIconLoader = useRef();
+    const profileIconRef = useRef();
+    
     const [user, setUser] = useState({});
     const [userLoading, setUserLoading] = useState(true);
+
     const fetchUser = () => {
 
         setUserLoading(true);
@@ -33,8 +39,6 @@ const ProfileUpper = ({ ProfileId }) => {
         }
     }
 
-    const bgLoaderRef = useRef();
-    const BgImgRef = useRef();
     const bgImgchangeHandle = (e) => {
 
         if (e.target.files.length > 0) {
@@ -59,8 +63,6 @@ const ProfileUpper = ({ ProfileId }) => {
         }
     }
 
-    const profileIconLoader = useRef();
-    const profileIconRef = useRef();
     const profileImgchangeHandle = (e) => {
 
         if (e.target.files.length > 0) {

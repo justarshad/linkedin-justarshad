@@ -1,6 +1,7 @@
 import './HeaderSignedIn.css';
 import LogoIcon from '../../Assets/home-logo.svg';
 import userDefaultIcon from '../../Assets/user.svg';
+import { auth, db } from '../../Config/firebase';
 
 import { BsSearch } from 'react-icons/bs';
 import { ImHome } from 'react-icons/im';
@@ -9,29 +10,29 @@ import { PiBagSimpleFill } from 'react-icons/pi';
 import { IoNotificationsSharp } from 'react-icons/io5';
 
 import { signOut } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
-
-import { auth, db } from '../../Config/firebase';
 import { getDoc, doc } from 'firebase/firestore';
+
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+
+
 const HeaderSignedIn = ({ setAuthStatus }) => {
 
     const Navigate = useNavigate();
+    const [user, setUser] = useState({});
+
     const signOutHandle = (e) => {
         signOut(auth).then((res) => {
             setAuthStatus(false);
             Navigate('/');
         });
     }
-
-    const [user, setUser] = useState({});
     const fetchUser = () => {
         const ref = doc(db, 'users', `${auth?.currentUser?.uid}`);
         getDoc(ref).then((res) => {
             setUser(res.data());
         })
     }
-
     useEffect(() => {
         fetchUser();
     }, []);
@@ -41,7 +42,7 @@ const HeaderSignedIn = ({ setAuthStatus }) => {
         <div className="HeaderSignedIn">
             <div className="left">
                 <img src={LogoIcon} alt="" onClick={() => {
-                    Navigate('/home');
+                    Navigate('/feed');
                 }} />
                 <div className="searchArea">
                     <BsSearch /> <input type="text" placeholder='search' />
@@ -79,7 +80,7 @@ const HeaderSignedIn = ({ setAuthStatus }) => {
                                 </div>
 
                             </li>
-                            <li className='second' onClick={()=>Navigate('/profile')}>View profile</li>
+                            <li className='second' onClick={() => Navigate('/profile')}>View profile</li>
                             <li className='divider'></li>
                             <li className='third' onClick={() => signOutHandle()}><button> Sign Out</button></li>
                         </ul>

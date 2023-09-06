@@ -1,10 +1,11 @@
-import './Home.css';
-import ProfileCart from './Profile/ProfileCart';
-import Feed from './Feed';
-import News from './News';
+import './Feed.css';
+import ProfileCart from './ProfileCart/ProfileCart';
+import FeedCart from './FeedCart/FeedCart';
+import News from './News/News';
 
-import { auth, db } from '../Config/firebase';
+import { auth, db } from '../../Config/firebase';
 import { getDoc, doc } from 'firebase/firestore';
+
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -32,9 +33,9 @@ const Home = () => {
 
     return (
         <>
-            <div className="Home">
+            <div className="Feed">
                 <ProfileCart user={user} loading={loading} />
-                <Feed user={user} userLoading={loading} />
+                <FeedCart user={user} userLoading={loading} />
                 <News loading={loading} />
             </div>
         </>

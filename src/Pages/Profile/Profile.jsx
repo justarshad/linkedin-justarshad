@@ -2,9 +2,9 @@ import './Profile.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import PostContainer from './PostContainer';
-import ProfileUpper from './ProfileUpper';
-import { auth } from '../../Config/firebase';;
+import PostContainer from './PostContainer/PostContainer';
+import ProfileUpper from './ProfileUpper/ProfileUpper';
+import { auth } from '../../Config/firebase';
 
 
 const Profile = ({ ProfileId }) => {
@@ -19,8 +19,8 @@ const Profile = ({ ProfileId }) => {
 
     return (
         <div className="Profile">
-            <ProfileUpper ProfileId={ProfileId}/>
-            <PostContainer ProfileId={ProfileId}/>
+            <ProfileUpper ProfileId={ProfileId} />
+            <PostContainer ProfileId={ProfileId} />
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import './ProfileCart.css';
-import defaultBackground from '../../Assets/card-bg.svg'
-import defaultProfileIcon from '../../Assets/user.svg'
-import itemIcon from '../../Assets/item-icon.svg'
+import defaultBackground from '../../../Assets/card-bg.svg'
+import defaultProfileIcon from '../../../Assets/user.svg';
+import itemIcon from '../../../Assets/item-icon.svg'
 
 import { useNavigate } from 'react-router-dom'
 

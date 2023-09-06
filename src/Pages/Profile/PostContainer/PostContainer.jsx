@@ -1,6 +1,6 @@
 import './PostContainer.css';
-import Post from '../Post/Post';
-import { db, auth } from '../../Config/firebase';
+import Post from '../../../Components/Post/Post';
+import { db, auth } from '../../../Config/firebase';
 import { getDocs, collection } from 'firebase/firestore';
 
 import { BiEditAlt } from 'react-icons/bi';
@@ -68,9 +68,9 @@ const PostContainer = ({ ProfileId }) => {
             {postList.length ?
                 (<div>
                     {ProfileId ?
-                        postList.map((item) => (<Post data={item} isOwner={false} rerenderPosts={fetchPost} ProfileId={ProfileId} key={item?.id}/>))
+                        postList.map((item) => (<Post data={item} isOwner={false} rerenderPosts={fetchPost} ProfileId={ProfileId} key={item?.id} />))
                         :
-                        postList.map((item) => (<Post data={item} isOwner={true} rerenderPosts={fetchPost} ProfileId={ProfileId} key={item?.id}/>))}
+                        postList.map((item) => (<Post data={item} isOwner={true} rerenderPosts={fetchPost} ProfileId={ProfileId} key={item?.id} />))}
                 </div>)
                 :
                 (<></>)

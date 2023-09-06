@@ -1,13 +1,15 @@
-import './Feed.css';
-import defaultProfileIcon from '../Assets/user.svg'
-import { MdOutlineAddPhotoAlternate, MdVideoLibrary, MdEvent, MdArticle } from 'react-icons/md';
-import Post from './Post/Post';
-import { db } from '../Config/firebase';
+import './FeedCart.css';
+import defaultProfileIcon from '../../../Assets/user.svg';
+import Post from '../../../Components/Post/Post';
+import PostModle from './PostModle/PostModle';
+
+import { db } from '../../../Config/firebase';
 import { getDocs, collection } from 'firebase/firestore';
-import PostModle from './Post/PostModle';
+
+import { MdOutlineAddPhotoAlternate, MdVideoLibrary, MdEvent, MdArticle } from 'react-icons/md';
 import { useEffect, useState } from 'react';
 
-const Feed = ({ user, userLoading }) => {
+const FeedCart = ({ user, userLoading }) => {
 
     const [postLoading, setPostLoading] = useState(true);
     const [post, setPost] = useState([]);
@@ -75,10 +77,10 @@ const Feed = ({ user, userLoading }) => {
                         </div>
                     </div >)
                 }
-                {postLoading ? (<></>) : post?.map((item) => (<Post data={item} key={item?.id}/>))}
+                {postLoading ? (<></>) : post?.map((item) => (<Post data={item} key={item?.id} />))}
             </div >
         </>
     );
 }
 
-export default Feed;
+export default FeedCart;

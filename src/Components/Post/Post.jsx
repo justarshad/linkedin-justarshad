@@ -1,18 +1,21 @@
 import './Post.css';
-import timeHandler from '../time/time';
+import timeHandler from '../../Utils/time';
 import defaultOwnerIcon from '../../Assets/user.svg';
+import { getDoc, doc, deleteDoc } from 'firebase/firestore';
+import { auth, db } from '../../Config/firebase';
+
 import { BiLike, BiCommentDetail } from 'react-icons/bi';
 import { HiMiniArrowPathRoundedSquare } from 'react-icons/hi2';
 import { BsFillSendFill } from 'react-icons/bs';
 import { MdDelete } from 'react-icons/md';
-import { useEffect, useState } from 'react';
-import { getDoc, doc, deleteDoc } from 'firebase/firestore';
-import { auth, db } from '../../Config/firebase';
+
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Post = ({ data, isOwner, rerenderPosts, ProfileId }) => {
 
     const Navigate = useNavigate();
+    const postTextRef = useRef();
     const [loading, setLoading] = useState(false);
     const [owner, setOwner] = useState({});
 
@@ -43,8 +46,7 @@ const Post = ({ data, isOwner, rerenderPosts, ProfileId }) => {
     }
 
     const textShowMore = (e)=>{
-        console.dir(e);
-        const textArea = document.querySelector('.Post .middle p');
+        const textArea = postTextRef.current;
 
         if(e.target.innerHTML === "show more"){
             textArea.innerHTML = data.text;
@@ -102,7 +104,7 @@ const Post = ({ data, isOwner, rerenderPosts, ProfileId }) => {
 
                     </div>
                     {data?.text ? (<div className="middle">
-                        <p>
+                        <p ref={postTextRef}>
                             {data.text.length > 200 ? data.text.slice(0, 200) + '  ....' : data.text}
                         </p>
                         {data.text.length > 200 ? (<div className='textShowMore' onClick={(e)=>textShowMore(e)}>show more</div>):(<></>)}
